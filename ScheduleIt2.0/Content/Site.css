@@ -1,0 +1,206 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.photo-container {
+    float: left;
+    width: 200px;
+    height: 300px;
+    margin-top: 30px;
+}
+
+    .alignthis div {
+        align-content: center;
+    }
+
+    .edit-delete {
+        margin-top: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 20px;
+        margin-bottom: 30px;
+    }
+
+        .edit-delete * {
+            padding-right: 20%;
+        }
+
+    .photo-placeholder {
+        width: 180px;
+        height: 200px;
+		background-color:lightgrey;
+        border-radius: 3px;
+        background-size: cover;
+        background-position: 50% 50%;
+        /*box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15);*/
+		-webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+		transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+		overflow: hidden;
+    }
+		.photo-placeholder:hover {
+			background-color: gray;
+		}
+
+	.upload {
+		margin-top: 10%;
+		margin-bottom: auto;
+		text-align:center;
+		font-size: 700%;
+		color: white;
+	}
+.fas fa-user-plus {
+	/*vertical-align:-webkit-baseline-middle !important;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+#logo {
+    margin: 0 auto;
+    display: block;
+}
+
+#workevent-logo {
+    float: left;
+    margin: 2% auto;
+}
+
+.my-1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.centerthis {
+    margin-left: auto;
+    margin-right: auto;
+}
+.clockinbtn {
+    background-color: #22148e;
+    border: solid;
+    border-color: darkgoldenrod;
+    border-width: 2px;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+}
+
+    .clockinbtn:hover {
+        background-color: darkgoldenrod;
+        border-color: #1A2B51;
+        color: white;
+    }
+.loginbtn {
+    background-color: #22148e;
+    border: solid;
+    border-color: darkgoldenrod;
+    border-width: 2px;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+}
+
+    .loginbtn:hover {
+        background-color: darkgoldenrod;
+        border-color: #1A2B51;
+        color: white;
+    }
+.uPassword {
+    border-color: blue;
+    font-weight: bold;
+    color: #808080;
+    cursor: pointer;
+}
+    .uPassword:hover {
+        border-color: #FFB035;
+    }
+.username {
+    border-color: blue;
+    font-weight: bold;
+    color: #808080;
+    /*color: white;*/
+    cursor: pointer;
+}
+
+a, a:link, a:active, a:any-link {
+    color: black;
+    display:inline-block;
+}
+
+    a:hover {
+        color: black;
+        display:inline-block;
+    }
+button#btnGroupDrop1 {
+    background-color: darkgoldenrod;
+    color:#ffe28c;
+}
+    button#btnGroupDrop1:hover {
+        color: white;
+    }
+#name {
+    color:#ffe28c;
+    text-decoration: none;
+    font-weight: 400;
+}
+    #name:hover {
+    color:white;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#registerLink, #loginLink {
+    text-decoration: none;
+    display:inline-block;
+    background-color:darkgoldenrod;
+}
+
+    #registerLink:hover, #loginLink:hover {
+        color: black;
+        text-decoration: none;
+        display:inline-block;
+        font-weight: 400;
+    }
+
+#card-body {
+    background-color: #091833;
+    border: solid;
+    border-color: #F2A343;
+
+}
+
+
+
+
+.scheduler_container {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #aeaeae;
+}

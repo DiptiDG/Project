@@ -1,0 +1,54 @@
+﻿@model ScheduleIt2._0.Models.UserDetailsViewModel
+
+<div class="card-header bg-dark text-light" align="center">
+	<!--Display the name of whichever user you clicked on in the card header-->
+	<h3>Details for @Html.DisplayFor(x => x.Fname) @Html.DisplayFor(x => x.Lname)</h3>
+</div>
+<div class="row no-gutters m-3">
+
+	<div class="col-3">
+		<div>
+			<div class="photo-contianer">
+				<div class="alignthis">
+					<!--Render _UserImage partial that displays UserImage and Post image upload to DB-->
+					@using (Html.BeginForm("AddUserImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+					{
+						@Html.Partial("_UserImage")
+					}
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--Tabel displaying user details in ViewModel-->
+	<div class="col-9">
+		<table class="table">
+			<tr>
+				<td class="font-weight-bold">DoB</td>
+				<td>@Html.DisplayFor(x => x.BirthDate)</td>
+
+				<td class="font-weight-bold">Email</td>
+				<td>@Html.DisplayFor(x => x.Email)</td>
+			</tr>
+			<tr>
+				<td class="font-weight-bold">Address</td>
+				<td>@Html.DisplayFor(x => x.Address)</td>
+
+				<td class="font-weight-bold">Hourly Pay</td>
+				<td>$@Html.DisplayFor(x => x.HourlyRate)</td>
+			</tr>
+			<tr>
+				<td class="font-weight-bold">End Date</td>
+				<td>@Html.DisplayFor(x => x.EndDate)</td>
+
+				<td class="font-weight-bold">Start Date</td>
+				<td>@Html.DisplayFor(x => x.StartDate)</td>
+			</tr>
+		</table>
+	</div>
+</div>
+		
+
+
+
+

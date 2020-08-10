@@ -1,0 +1,173 @@
+﻿@using ScheduleIt2._0.Models
+@model EmailModel
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 mt-5 px-2">
+            <h4>
+                Discounted price until the end of the month: starting at $6,750.
+            </h4>
+     
+
+            <img class="img-fluid" src="~/Images/bootcamp.png" alt="" />
+
+        </div>
+
+
+        <div class="col-md-4 mt-5 px-2">
+            <h3 align="center">Email the site administrator</h3>
+            <div class="card-body mx-auto bg-dark text-warning border-warning">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="card-header text-center">
+                        <p>Fill out the form below with your information and your message and the admin will recieve a notification of your message</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row no-gutters">
+                            <div class="form-group col-md-12">
+                                @Html.EditorFor(m => m.FromName, new { htmlAttributes = new { @class = "form-control col-md-12", @placeholder = "Full Name" } })
+                                @Html.ValidationMessageFor(m => m.FromName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-12">
+                                @Html.EditorFor(m => m.FromEmail, new { htmlAttributes = new { @class = "form-control col-md-12", @placeholder = "Email Address" } })
+                                @Html.ValidationMessageFor(m => m.FromEmail, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-12">
+                                @Html.EditorFor(m => m.Subject, new { htmlAttributes = new { @class = "form-control col-md-12", @placeholder = "Subject" } })
+                                @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-12">
+                                @Html.TextAreaFor(m => m.MessageBody, new { @class = "form-control col-md-12", @placeholder = "Message" })
+                                @Html.ValidationMessageFor(m => m.MessageBody, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="submit" value="Send" class="btn btn-block btn-primary col-md-12" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+
+            </div>
+            <br />
+            <a href="https://www.facebook.com/learncodinganywhere/?ref=aymt_homepage_panel" class="badge-pill badge-warning"><i class="fab fa-facebook-f pr-1"></i></a>
+            <!--Facebook-->
+            <a href="https://twitter.com/thetechacad" class="badge-pill badge-warning"><i class="fab fa-twitter pr-1"></i></a>
+            <!--Twitter-->
+            <a href="https://www.pinterest.com/TheTechAcademy/" class="badge-pill badge-warning"><i class="fab fa-pinterest pr-1"></i></a>
+            <!--Pinterest-->
+            <a href="https://www.linkedin.com/school/prosper-it-academy/" class="badge-pill badge-warning"><i class="fab fa-linkedin-in pr-1"></i></a>
+            <a href="https://www.instagram.com/thetechacademy/" class="badge-pill badge-warning"><i class="fab fa-instagram pr-1"></i></a>
+            <a href="https://plus.google.com/+TheTechAcademyLearnCoding" class="badge-pill badge-warning"><i class="fab fa-google-plus-g pr-1"></i></a>
+            <br>
+            <small><a class="nav-link text-warning" href="mailto:info@learncodinganywhere.com"><i class="fa fa-envelope fa-fw"></i> info@learningcodeanywhere.com<br /><i class="fa fa-phone pr-1"></i>503.206.6915</a></small>
+
+
+        </div>
+
+
+        <div class="col-md-4 mt-5 px-2">
+            <h4>
+                <p>The Tech Academy was chosen as the World's Greatest Boot Camp by How2Media. </p>
+                <p>Watch the video here!:</p>
+            </h4>
+            <p>
+                <iframe frameborder="0" src="https://www.youtube.com/embed/gxtOsn_9bCI?autoplay=1&amp;autohide=1" style="width: 293px; height: 358px;"></iframe>
+
+            </p>
+            <h6>The Tech Academy Denver</h6>
+            <p>
+                8850 W 38th Ave. Unit A
+                Wheat Ridge, CO 80033
+            </p>
+
+            <h6> The Tech Academy Online</h6>
+            <p>
+                310 SW 4th Ave Suite 412,
+                Portland, OR 97204
+            </p>
+
+            <h6>The Tech Academy Portland</h6>
+            <p>
+                310 SW 4th Ave Suite 412,
+                Portland, OR 97204
+            </p>
+
+            <h6>The Tech Academy Seattle</h6>
+            <p>
+                325 S. 3rd Street
+                Renton, WA 98057
+            </p>
+
+            <h6> The Tech Academy Utah</h6>
+            <p>
+                1785 South 4130 West Suite J
+                Salt Lake City, UT 84104
+            </p>
+        </div>
+
+
+
+    </div>
+    <div class="container mt-20 mb-20">
+        <div class="row">
+            <div class="col-md-3">
+                <h3 class="heading" style="text-align:center">Portland, <span class="color2">OR</span></h3>
+                <!-- Replace Latitude, Logitude and Info Window as per your place -->
+
+                <iframe width="400"
+                        height="250"
+                        frameborder="0" style="border:0; width:100%"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBbQtNhcM3tjpf2dR0r8WkUAyTbQLHRc9M&q=TheTechAcademy,Portland+OR"
+                        allowfullscreen></iframe>
+
+            </div>
+            <div class="col-md-3">
+                <h3 class="heading" style="text-align:center">Seattle, <span class="color2">WA</span></h3>
+                <!-- Replace Latitude, Logitude and Info Window as per your place -->
+
+                <iframe width="400"
+                        height="250"
+                        frameborder="0" style="border:0; width:100%"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10786.150864737709!2d-122.2122212!3d47.4794373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xafa5a5987d7d68ac!2sThe+Tech+Academy+Seattle!5e0!3m2!1sen!2sus!4v1524774204293"
+                        allowfullscreen></iframe>
+            </div>
+            <div class="col-md-3">
+                <h3 class="heading" style="text-align:center">Denver, <span class="color2">CO</span></h3>
+                <!-- Replace Latitude, Logitude and Info Window as per your place -->
+
+                <iframe width="400"
+                        height="250"
+                        frameborder="0" style="border:0; width:100%"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.687907112416!2d-105.09816458462366!3d39.76911507944556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b865957f11161%3A0xfb63ad92b73aa632!2s8850+W+38th+Ave+unit+a%2C+Wheat+Ridge%2C+CO+80033!5e0!3m2!1sen!2sus!4v1530648745789"
+                        allowfullscreen></iframe>
+            </div>
+            <div class="col-md-3">
+                <h3 class="heading" style="text-align:center">Salt Lake City, <span class="color2">UT</span></h3>
+                <!-- Replace Latitude, Logitude and Info Window as per your place -->
+
+                <iframe width="400"
+                        height="250"
+                        frameborder="0" style="border:0; width:100%"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.3585470475427!2d-111.99087628459438!3d40.73213537932966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752f322c5f7dc6b%3A0x29b2ceb1fef52b1e!2s1785+S+4130+W+Suite+J%2C+Salt+Lake+City%2C+UT+84104!5e0!3m2!1sen!2sus!4v1559167167403!5m2!1sen!2sus"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+        <!-- /main content -->
+
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ScheduleIt2._0.Models.ApplicationUser>
+
+<div class="col-sm-12 col-md-3 col-lg-3">
+	<div class="card shadow mx-auto">
+		<div class="card-header bg-dark text-light" align="center">
+			<h3>Employees</h3>
+		</div>
+	<!--Display details on all users in the database in a bootstrap table-->
+		<table class="table table-hover table-responsive-md table-responsive-lg">
+			
+			<tbody>
+			<!--Use foreach statement to iterate through each item in the 
+			IdentityModel to populate the table-->
+			@foreach (var item in Model)
+			{
+				<!--add if statement to only show database objects that have names-->
+				if (item.Fname != null)
+				{
+				<tr>
+					<th scope="row" class="text-nowrap">
+						<!--Remove the Html.DisplayFor statements and replace with an
+							Ajax ActionLink that concatinates the first and last names
+							and binds them to the LoadPartialView Action and assigns
+							them an id that corresponds to their user Id-->
+
+						@Ajax.ActionLink(item.Fname + " " + item.Lname, "LoadPartialView", new { id = item.Id },
+							new AjaxOptions { UpdateTargetId = "userDetailsContainer",
+							InsertionMode = InsertionMode.Replace, HttpMethod = "GET" })
+					</th>
+				</tr>
+				}
+			}
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="col-md-9">
+	<div class="card shadow mx-auto" id="userDetailsContainer">
+	<!--This is the div where _ViewUserDetails will be rendered-->
+	</div>
+</div>

@@ -1,0 +1,56 @@
+﻿
+@Html.AntiForgeryToken()
+
+<!--If else statement that shows either use image or displays clickable icon to launch 
+	photo upload dialog-->
+@{ 
+	if (Model.Image == null)
+	{
+
+		<div class="photo-placeholder shadow-sm">
+			<!--create div to style icon-->
+			<div class="upload" title="Add image">
+				<i class="fas fa-camera"></i>
+			</div>
+		</div>
+		<!--create modal for image upload-->
+		<div class="modal" id="openModal">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="model-title">Upload a User Image</h4>
+					</div>
+					<div class="modal-body m-3">
+						<div class="mx-4">
+							<!--launches GUI for file browser-->
+							<input type="file" class="custom-file-input" id="userImage"  name="userImage" accept=".png,.jpg,.jpeg,.bmp">
+							<!--passes in User id to be used by controller-->
+							<input type="hidden" name="id" value="@Model.Id" />
+						<label class="custom-file-label" for="userImage">Choose file</label>
+						</div>
+						<!--submit button saves data to ApplicationUser model-->
+						<input type="submit" value="Save" style="margin-left: 5px" class="btn" />
+						<button type="button" id="quit" class="btn" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	}
+	else
+	{
+		<!--Displays image in Db via UserDetailsViewModel-->
+		<div class="photo-placeholder shadow" style="background-image: url(@Url.Action("RetrieveUserImage", "Home", new { id = Model.Id}))"></div>
+	}
+}
+
+<!--Javascript to show/hide the modal when icon is clicked-->
+<script>
+	$(".upload").click(function () {
+		$('#openModal').show();
+	});
+
+	$("button#quit").click(function () {
+		$('#openModal').hide();
+	})
+</script>
